@@ -1,0 +1,32 @@
+.fm-charts-color-1 {
+    fill: #00b4db !important;
+}
+
+#pivotcharts-container-2 #fm-pivot-view #fm-charts-view div #fm-chart svg g g rect.fm-bar {
+    fill: #7abd5f !important;
+}
+
+#pivotcharts-container-3 #fm-pivot-view #fm-charts-view div #fm-chart svg g g rect.fm-bar {
+    fill: #ec7b51 !important;
+}
+
+/* Charts Style  */
+
+.fm-charts-color-4 {
+    fill: #76b04e !important;
+}
+
+.fm-charts-color-5 {
+    fill: #de425b !important;
+}
+
+.fm-charts-color-6 {
+    fill: #e67f83 !important;
+}
+
+
+.fm-title {
+  letter-spacing: 1px !important;
+  text-rendering: optimizeLegibility !important;
+  color: #00a45a !important;
+}

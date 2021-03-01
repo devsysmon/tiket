@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=800, height=480" , user-scalable="no" , initial-scale="1" , maximum-scale="1">
+    <link rel="stylesheet" href="reset.min.css">
+    <link rel="stylesheet" href="font-awesome.css">
+    <link rel="stylesheet" href="weather-icons.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <style>
+        .zoom {
+            transition: transform .1s;
+            /* Animation */
+        }
+
+        .zoom:hover {
+            transform: scale(1.2);
+        }
+    </style>
+    <div class="page page-home" style="display:block;">
+        <div class="bg"></div>
+        <div class="overlay"></div>
+        <div class="panel panel-time">
+            <div class="span time">15:06</div>
+            <div class="span date">Monday, 27 Juny 2015</div>
+        </div>
+        <div class="panel panel-weather">
+            <div class="location">Jakarta, Indonesia</div>
+            <!--.icon.wi.wi-day-sunny-overcast--><img src="http://ultraimg.com/images/KlfpUAu.png" />
+            <div class="span temp">28<span class="degree">&deg;C</span></div>
+            <div class="span text">Sunny</div>
+        </div>
+        <div class="panel panel-calendar">
+            <ul>
+                <li class="zoom">
+                    <div class="time">8:00 - 9:00</div>
+                    <div class="title">Shopping</div>
+                </li>
+                <li class="zoom">
+                    <div class="time">10:00 - 12:00</div>
+                    <div class="title">Meet Tom</div>
+                </li>
+                <li class="zoom">
+                    <div class="time">18:00 - 20:00</div>
+                    <div class="title">Go to cinema</div>
+                </li>
+            </ul>
+        </div>
+        <div class="panel panel-tasks">
+            <ul>
+                <li class="zoom">
+                    <div class="check"></div>
+                    <div class="title">Milk</div>
+                </li>
+                <li class="zoom">
+                    <div class="check"></div>
+                    <div class="title">Bread & cheese</div>
+                </li>
+                <li class="zoom">
+                    <div class="check"></div>
+                    <div class="title">Beer & wine</div>
+                </li>
+                <li class="other zoom">
+                    <div class="plus"></div>
+                    <div class="title">... and 15 other tasks</div>
+                </li>
+            </ul>
+        </div>
+        <div class="panel panel-functions">
+            <div class="icon icon-weather zoom" data-page="weather"><img style="margin: -15px -15px -15px -15px;" src="1.png" height="75" width="75" /></div>
+            <div class="icon icon-calendar zoom" data-page="calendar"><img style="margin: -15px -15px -15px -15px;" src="1.png" height="75" width="75" /></div>
+            <div class="icon icon-map zoom" data-page="map"><img style="margin: -15px -15px -15px -15px;" src="1.png" height="75" width="75" /></div>
+            <div class="icon icon-tasks zoom" data-page="tasks"><img style="margin: -15px -15px -15px -15px;" src="1.png" height="75" width="75" /></div>
+            <div class="icon icon-news zoom" data-page="news"><img style="margin: -15px -15px -15px -15px;" src="1.png" height="75" width="75" /></div>
+        </div>
+    </div>
+    <div class="page page-weather">
+
+        <div class="overlay"></div>
+        <div class="panel panel-now">
+            <div class="mainInfo">
+                <!--.icon.wi.wi-day-sunny--><img src="http://ultraimg.com/images/KlfpUAu.png" />
+                <div class="temp"><span class="value">27<span class="degree">&deg;C</span></span><span class="separator">/</span><span class="value">19<span class="degree">&deg;C</span></span></div>
+            </div>
+            <div class="row">
+                <div class="info"><i class="wi wi-strong-wind"></i><span class="value">15 km/h</span></div>
+                <div class="info"><i class="wi wi-wind-default _150-deg"></i><span class="value">NW</span></div>
+                <div class="info"><i class="wi wi-sprinkles"></i><span class="value">40 % </span></div>
+            </div>
+        </div>
+        <div class="panel panel-today">
+            <div class="box">
+                <div class="title">Morning</div>
+                <!--.icon.wi.wi-day-rain--><img src="http://ultraimg.com/images/Paf07R1.png" />
+                <div class="temp"><span class="value">16<span class="degree">&deg;C</span></span></div>
+            </div>
+            <div class="box">
+                <div class="title">Afternoon</div>
+                <!--.icon.wi.wi-day-rain--><img src="http://ultraimg.com/images/KlfpUAu.png" />
+                <div class="temp"><span class="value">26<span class="degree">&deg;C</span></span></div>
+            </div>
+            <div class="box">
+                <div class="title">Tonight</div>
+                <!--.icon.wi.wi-day-rain--><img src="http://ultraimg.com/images/NDKiHOg.png" />
+                <div class="temp"><span class="value">19<span class="degree">&deg;C</span></span></div>
+            </div>
+        </div>
+        <div class="panel panel-location">
+            <div class="title"> <span>Budapest</span><span>Hungary</span></div>
+            <div class="icon fa fa-map-marker"></div>
+        </div>
+        <div class="panel panel-forecast">
+            <div class="box">
+                <div class="title">SENIN</div>
+                <!--.icon.wi.wi-day-rain--><img src="http://ultraimg.com/images/bosikG0.png" />
+                <div class="temp"><span class="value">31<span class="degree">&deg;C</span></span><span class="separator">/</span><span class="value">23<span class="degree">&deg;C</span></span></div>
+            </div>
+            <div class="box">
+                <div class="title">SELASA</div><img src="http://ultraimg.com/images/KlfpUAu.png" />
+                <div class="temp"><span class="value">25<span class="degree">&deg;C</span></span><span class="separator">/</span><span class="value">20<span class="degree">&deg;C</span></span></div>
+            </div>
+            <div class="box">
+                <div class="title">RABU</div><img src="http://ultraimg.com/images/t8VL5lw.png" />
+                <div class="temp"><span class="value">18<span class="degree">&deg;C</span></span><span class="separator">/</span><span class="value">12<span class="degree">&deg;C</span></span></div>
+            </div>
+            <div class="box">
+                <div class="title">Fri</div><img src="http://ultraimg.com/images/t8VL5lw.png" />
+                <div class="temp"><span class="value">16<span class="degree">&deg;C</span></span><span class="separator">/</span><span class="value">9<span class="degree">&deg;C</span></span></div>
+            </div>
+            <div class="box">
+                <div class="title">Sat</div><img src="http://ultraimg.com/images/Paf07R1.png" />
+                <div class="temp"><span class="value">20<span class="degree">&deg;C</span></span><span class="separator">/</span><span class="value">13<span class="degree">&deg;C</span></span></div>
+            </div>
+            <div class="box">
+                <div class="title">Sun</div><img src="http://ultraimg.com/images/bosikG0.png" />
+                <div class="temp"><span class="value">26<span class="degree">&deg;C</span></span><span class="separator">/</span><span class="value">22<span class="degree">&deg;C</span></span></div>
+            </div>
+        </div>
+    </div>
+    <div class="page page-calendar">
+        <div class="bg"></div>
+        <div class="overlay"></div>
+        <div class="panel panel-calendar left">
+            <div class="header">
+                <div class="title">Tugas Pagi</div>
+                <div class="date">10 Februari 2020</div>
+            </div>
+            <ul>
+                <li>
+                    <div><b>ID MESIN : 1234</b></div>
+                    <br>
+                    <table style="width:100%">
+                        <tr>
+                            <th><b>Branch</b></th>
+                            <th>Location</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>JKT</td>
+                            <td>Tanjung Barat</td>
+                            <td>ON</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <div><b>ID MESIN : 1234</b></div>
+                    <br>
+                    <table style="width:100%">
+                        <tr>
+                            <th><b>Branch</b></th>
+                            <th>Location</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>JKT</td>
+                            <td>Tanjung Barat</td>
+                            <td>ON</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <div><b>ID MESIN : 1234</b></div>
+                    <br>
+                    <table style="width:100%">
+                        <tr>
+                            <th><b>Branch</b></th>
+                            <th>Location</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>JKT</td>
+                            <td>Tanjung Barat</td>
+                            <td>ON</td>
+                        </tr>
+                    </table>
+                </li>
+
+            </ul>
+        </div>
+        <div class="panel panel-calendar right">
+            <div class="header">
+                <div class="title">Tugas Sore</div>
+                <div class="date">10 Februari 2020</div>
+            </div>
+            <ul>
+                <li>
+                    <div><b>ID MESIN : 1234</b></div>
+                    <br>
+                    <table style="width:100%">
+                        <tr>
+                            <th><b>Branch</b></th>
+                            <th>Location</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>JKT</td>
+                            <td>Tanjung Barat</td>
+                            <td>ON</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <div><b>ID MESIN : 1234</b></div>
+                    <br>
+                    <table style="width:100%">
+                        <tr>
+                            <th><b>Branch</b></th>
+                            <th>Location</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>JKT</td>
+                            <td>Tanjung Barat</td>
+                            <td>ON</td>
+                        </tr>
+                    </table>
+                </li>
+                <li>
+                    <div><b>ID MESIN : 1234</b></div>
+                    <br>
+                    <table style="width:100%">
+                        <tr>
+                            <th><b>Branch</b></th>
+                            <th>Location</th>
+                            <th>Status</th>
+                        </tr>
+                        <tr>
+                            <td>JKT</td>
+                            <td>Tanjung Barat</td>
+                            <td>ON</td>
+                        </tr>
+                    </table>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class="page page-map">
+        <div class="bg"></div>
+        <div class="overlay"></div>
+        <div class="map"></div>
+    </div>
+    <div class="page page-tasks">
+        <div class="bg"></div>
+        <div class="overlay"></div>
+        <div class="wrapper">
+            <div class="panel panel-tasklist">
+                <div class="header">
+                    <div class="title">Shopping list (4)</div>
+                </div>
+                <div class="newItem">
+                    <div class="text"><i class="fa fa-plus"></i><span class="title">Add new item</span></div>
+                    <input type="text" placeholder="Add new item" />
+                </div>
+                <ul>
+                    <li class="checked">
+                        <div class="check"></div>
+                        <div class="title">Milk</div>
+                    </li>
+                    <li>
+                        <div class="check"></div>
+                        <div class="title">Bread</div>
+                    </li>
+                    <li>
+                        <div class="check"></div>
+                        <div class="title">Cheese</div>
+                    </li>
+                    <li>
+                        <div class="check"></div>
+                        <div class="title">Beer</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel panel-tasklist">
+                <div class="header">
+                    <div class="title">To-do list (5)</div>
+                </div>
+                <div class="newItem">
+                    <div class="text"><i class="fa fa-plus"></i><span class="title">Add new item</span></div>
+                    <input type="text" placeholder="Add new item" />
+                </div>
+                <ul>
+                    <li>
+                        <div class="check"></div>
+                        <div class="title">Cleaning</div>
+                    </li>
+                    <li>
+                        <div class="check"></div>
+                        <div class="title">Washing</div>
+                    </li>
+                    <li>
+                        <div class="check"></div>
+                        <div class="title">Shopping</div>
+                    </li>
+                    <li class="checked">
+                        <div class="check"></div>
+                        <div class="title">Pay bills</div>
+                    </li>
+                    <li>
+                        <div class="check"></div>
+                        <div class="title">Dusting</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel panel-tasklist">
+                <div class="header">
+                    <div class="title">Long-term tasks (3)</div>
+                </div>
+                <div class="newItem">
+                    <div class="text"><i class="fa fa-plus"></i><span class="title">Add new item</span></div>
+                    <input type="text" placeholder="Add new item" />
+                </div>
+                <ul>
+                    <li>
+                        <div class="check"></div>
+                        <div class="title">Prepare boiler</div>
+                    </li>
+                    <li>
+                        <div class="check"></div>
+                        <div class="title">Buy a sofa</div>
+                    </li>
+                    <li>
+                        <div class="check"></div>
+                        <div class="title">Car service</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="page page-news">
+        <div class="bg"></div>
+        <div class="overlay">
+            <div class="panel panel-newslist-big">
+                <ul>
+                    <li>
+                        <div class="image" style="background-image: url('unnamed.jpg');">
+                            <div class="source" style="color:white;font-size:14px;font-weight: bold; ">Checklist Kebersihan & Kelengkapan ATM</div>
+                            <br>
+                            <br>
+                            <div class="source">Cleaning Summary</div>
+                            <div class="time">10 Februari 2020</div>
+                        </div>
+                        <br>
+                        <table style="width:100%">
+                            <tr>
+                                <th>ID Mesin</th>
+                                <th>Branch</th>
+                                <th>Location</th>
+                            </tr>
+                            <tr>
+                                <td>1234</td>
+                                <td>JKT</td>
+                                <td>Tanjung Barat</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table style="width:100%">
+                            <tr>
+                                <th><b>No.</b></th>
+                                <th>Checklist</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Kamera CCTV</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>DVR CCTV</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>UPS</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Integrated Transformer</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>AC</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Sticker Kaca</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Sticker Mesin</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Neon Sign</td>
+                                <td>OK</td>
+                            </tr>
+                        </table>
+                    </li>
+                    <li>
+                        <div class="image" style="background-image: url('atmbig.jpg');">
+                            <div class="source" style="color:white;font-size:14px;font-weight: bold; ">Checklist Kebersihan & Kelengkapan ATM</div>
+                            <br>
+                            <br>
+                            <div class="source">Cleaning Summary</div>
+                            <div class="time">10 Februari 2020</div>
+                        </div>
+                        <br>
+                        <table style="width:100%">
+                            <tr>
+                                <th>ID Mesin</th>
+                                <th>Branch</th>
+                                <th>Location</th>
+                            </tr>
+                            <tr>
+                                <td>1234</td>
+                                <td>JKT</td>
+                                <td>Tanjung Barat</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table style="width:100%">
+                            <tr>
+                                <th><b>No.</b></th>
+                                <th>Checklist</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Kamera CCTV</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>DVR CCTV</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>UPS</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Integrated Transformer</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>AC</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Sticker Kaca</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Sticker Mesin</td>
+                                <td>OK</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Neon Sign</td>
+                                <td>OK</td>
+                            </tr>
+                        </table>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="panel panel-newslist-small">
+                <ul>
+                    <li>
+                        <div style="color:white;font-size:16px;"><b>Checklist Issue Report :</b> </div>
+                        <small style="color:white;font-size:12px;">Date : 10 Februari 2020</small>
+                        <div class="image" style="background-image: url('cropped-atm-machine.jpg');"></div>
+                        <div class="title">ID MESIN : 1234</div>
+                        <div>
+                            <p>
+                                - Kamera CCTV <br>
+                                - DVR CCTV <br>
+                                - UPS
+                            </p>
+                            <br>
+                            <p><img style="margin: 10px 0px -5px 0px;" src="search.png" height="20" width="20" /> Detail </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div style="color:white;font-size:16px;"><b>Checklist Issue Report :</b> </div>
+                        <small style="color:white;font-size:12px;">Date : 10 Februari 2020</small>
+                        <div class="image" style="background-image: url('atm.jpg');"></div>
+                        <div class="title">ID MESIN : 2345</div>
+                        <div>
+                            <p>
+                                - DVR CCTV <br>
+                                - UPS
+                            </p>
+                            <br>
+                            <p><img style="margin: 10px 0px -5px 0px;" src="search.png" height="20" width="20" /> Detail </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div style="color:white;font-size:16px;"><b>Checklist Issue Report :</b> </div>
+                        <small style="color:white;font-size:12px;">Date : 10 Februari 2020</small>
+                        <div class="image" style="background-image: url('atm3.png');"></div>
+                        <div class="title">ID MESIN : 3456</div>
+                        <div>
+                            <p>
+                                - Integrated Transformer <br>
+                                - AC <br>
+                                - Sticker Mesin
+                            </p>
+                            <br>
+                            <p><img style="margin: 10px 0px -5px 0px;" src="search.png" height="20" width="20" /> Detail </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div style="color:white;font-size:16px;"><b>Checklist Issue Report :</b> </div>
+                        <small style="color:white;font-size:12px;">Date : 10 Februari 2020</small>
+                        <div class="image" style="background-image: url('cropped-atm-machine.jpg');"></div>
+                        <div class="title">ID MESIN : 4567</div>
+                        <div>
+                            <p>
+                                - Sticker Kaca <br>
+                                - DVR CCTV <br>
+                            </p>
+                            <br>
+                            <p><img style="margin: 10px 0px -5px 0px;" src="search.png" height="20" width="20" /> Detail </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div style="color:white;font-size:16px;"><b>Checklist Issue Report :</b> </div>
+                        <small style="color:white;font-size:12px;">Date : 10 Februari 2020</small>
+                        <div class="image" style="background-image: url('atm3.png');"></div>
+                        <div class="title">ID MESIN : 6789</div>
+                        <div>
+                            <p>
+                                - Kamera CCTV <br>
+                                - DVR CCTV <br>
+                                - UPS
+                            </p>
+                            <br>
+                            <p><img style="margin: 10px 0px -5px 0px;" src="search.png" height="20" width="20" /> Detail </p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src="jquery.min.js"></script>
+    <script src="TweenMax.min.js"></script>
+    <script src="hammer.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMRGe3tisQkblfDg8yJ-OwSCDV_2uRq2U"></script>
+    <script src="ScrollToPlugin.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

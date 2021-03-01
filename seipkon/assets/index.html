@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+
+        <title>jClocksGMT v. 2.0</title>
+
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+        
+        <link rel="stylesheet" href="css/jClocksGMT.css">
+        
+        <style>
+            body { font-family: Arial, sans-serif; }
+        </style>
+
+    </head>
+    <body>
+
+        <div id="clock_jkt"></div>
+        <div id="clock_india"></div>
+        <div id="clock_korea"></div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="js/jClocksGMT.js"></script>
+        <script src="js/jquery.rotate.js"></script>
+
+        <script>
+            $(document).ready(function(){
+
+                $('#clock_jkt').jClocksGMT(
+                {
+                    title: 'WIB, JAKARTA, IND', 
+                    offset: '+7',
+					skin: 2 
+                });
+
+                $('#clock_india').jClocksGMT(
+                {
+                    title: 'WITA, TENGAH, IND', 
+                    offset: '+8', 
+                    dst: false, 
+                    skin: 2, 
+                    timeformat: 'HH:mm'
+                });
+
+                $('#clock_korea').jClocksGMT(
+                {
+                    title: 'WIT, TIMUR, IND', 
+                    offset: '+9', 
+                    skin: 2, 
+                    date: true
+                });
+
+
+            });
+        </script>
+
+    </body>
+</html>

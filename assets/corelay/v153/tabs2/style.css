@@ -1,0 +1,310 @@
+
+/**
+ * Core: Base
+ * --------------------------------------------------
+ */
+
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+/**
+ * Component: `browser`
+ * -----------------------------------------------------------------------------
+ */
+.c-browser {
+  position: relative;
+  /* border-radius: 6px 6px 0 0; */
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/**
+ * Component: `bar`
+ * -----------------------------------------------------------------------------
+ */
+.c-bar {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 35px;
+  padding: 0 5px;
+}
+.c-bar--top {
+  background-color: #4a4653;
+  z-index: 1;
+}
+.c-bar--bottom {
+  background-color: #F5F7FA;
+  border-bottom: 1px solid #E6E9ED;
+  z-index: 2;
+}
+
+/**
+ * Component: `controls`
+ * -----------------------------------------------------------------------------
+ */
+.c-controls {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/**
+ * Component: `control`
+ * -----------------------------------------------------------------------------
+ */
+.c-control {
+  align-self: center;
+  font: 0/0 "";
+  color: transparent;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.c-control--close {
+  border-color: #DA4453;
+  background-color: #ED5565;
+}
+.c-control--close:hover {
+  background-color: #DA4453;
+}
+.c-control--min {
+  border-color: #F6BB42;
+  background-color: #FFCE54;
+}
+.c-control--min:hover {
+  background-color: #F6BB42;
+}
+.c-control--max {
+  border-color: #8CC152;
+  background-color: #A0D468;
+}
+.c-control--max:hover {
+  background-color: #8CC152;
+}
+
+/**
+ * Component: `tabs`
+ * -----------------------------------------------------------------------------
+ */
+.c-tabs {
+  flex-grow: 1;
+  align-self: flex-end;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  margin: 0 5px;
+  padding: 0;
+  list-style: none;
+}
+
+/**
+ * Component: `tab`
+ * -----------------------------------------------------------------------------
+ */
+.c-tab {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  background-color: #CCD1D9;
+  height: 25px;
+  padding: 0 5px;
+  border-radius: 3px 3px 0 0;
+  color: #434A54;
+  max-width: 30vw;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.c-tab:not(:last-child) {
+  margin-right: 5px;
+}
+.c-tab:hover:not(.is-active) {
+  background-color: #E6E9ED;
+}
+.c-tab.is-active {
+  background-color: #F5F7FA;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+.c-tab__favicon {
+  align-self: center;
+}
+.c-tab__title {
+  flex-grow: 1;
+  align-self: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  font-size: 12px;
+  padding-right: 10px;
+}
+
+/**
+ * Component: `mode`
+ * -----------------------------------------------------------------------------
+ */
+.c-mode {
+  align-self: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  color: #AAB2BD;
+  border: 1px solid #AAB2BD;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.c-mode:hover {
+  color: #CCD1D9;
+  border-color: #CCD1D9;
+}
+.c-mode .fa {
+  align-self: center;
+}
+
+/**
+ * Component: `menu`
+ * -----------------------------------------------------------------------------
+ */
+.c-menu {
+  align-self: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  color: #656D78;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.c-menu:hover {
+  background-color: #fff;
+  border-color: #CCD1D9;
+}
+.c-menu .fa {
+  align-self: center;
+}
+
+/**
+ * Component: `navigation`
+ * -----------------------------------------------------------------------------
+ */
+.c-navigation {
+  align-self: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  color: #656D78;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.c-navigation:hover {
+  background-color: #fff;
+  border-color: #CCD1D9;
+}
+.c-navigation .fa {
+  align-self: center;
+}
+
+/**
+ * Component: `address`
+ * -----------------------------------------------------------------------------
+ */
+.c-address {
+  flex-grow: 1;
+  align-self: center;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 25px;
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 0 5px;
+  margin: 0 5px;
+  border: 1px solid #CCD1D9;
+}
+.c-address__connection {
+  align-self: center;
+  color: #A0D468;
+}
+.c-address__url {
+  flex-grow: 1;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  outline: 0;
+  color: #656D78;
+}
+.c-address__bookmark {
+  align-self: center;
+  color: #656D78;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.c-address__bookmark:hover {
+  color: #F6BB42;
+}
+
+/**
+ * Component: `frames`
+ * -----------------------------------------------------------------------------
+ */
+.c-frames {
+  position: relative;
+  height: 80vh;
+  background-color: #fff;
+}
+
+/**
+ * Component: `frame`
+ * -----------------------------------------------------------------------------
+ */
+.c-frame {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 0;
+}
+
+.c-frame--default:before {
+  content: "Welcome!1234";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 72px;
+  line-height: 72px;
+  font-weight: 100;
+}
+.c-frame.is-active {
+  display: block;
+}

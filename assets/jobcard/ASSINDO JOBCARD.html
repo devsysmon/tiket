@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta charset="utf-8"/>
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+		<link rel="stylesheet" href="base.min.css"/>
+		<link rel="stylesheet" href="fancy.min.css"/>
+		<link rel="stylesheet" href="main.css"/>
+		<script src="compatibility.min.js"></script>
+		<script src="theViewer.min.js"></script>
+		<script>
+			try {
+				theViewer.defaultViewer = new theViewer.Viewer({});
+			} catch(e){}
+			
+			let para = document.querySelector('body');
+			var cs = window.getComputedStyle(para);
+			var actualSize = Number.parseFloat(cs.fontSize) * detectZoom.zoom();
+			
+			console.log(actualSize);
+		</script>
+		<title></title>
+		<style>
+			#no_jobcard {
+				z-index: 1;
+				float: right;
+				right: 30px;
+				top: 13.7%;
+			}
+			#keterangan_pelanggan {-webkit-text-size-adjust: auto;
+				z-index: 1;
+				float: right;
+				left: 112px;
+				top: 175px;
+			}
+			#keterangan_pelanggan div {
+				line-height: 19px;
+				-webkit-text-size-adjust: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="sidebar">
+			<div id="outline">
+			</div>
+		</div>
+		<div id="page-container">
+			<div id="pf1" class="pf w0 h0" data-page-no="1">
+				<div id="no_jobcard" style="position: absolute"> 123456</div>
+				<div id="keterangan_pelanggan" style="position: absolute">
+					<div>asdsda</div>
+					<div>asdsda</div>
+					<div>asdsda</div>
+					<div>asdsda</div>
+					<div>asdsda</div>
+				</div>
+				<div class="pc pc1 w0 h0"><img class="bi x0 y0 w1 h1" alt="" src="bg1.png"/></div>
+				<div class="pi" data-data='{"ctm":[1.000000,0.000000,0.000000,1.000000,0.000000,0.000000]}'></div>
+			</div>
+		</div>
+		<div class="loading-indicator">
+
+		</div>
+	</body>
+	<script type="text/javascript" src="jsPDF/dist/jspdf.min.js"></script>
+</html>

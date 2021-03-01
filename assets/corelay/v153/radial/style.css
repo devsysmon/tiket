@@ -1,0 +1,78 @@
+.pie {
+  position: relative;
+  display: inline-block;
+  background-image: conic-gradient(
+    rgba(0,0,0,0) calc(3.6deg * var(--percent)),
+    rgba(0,0,0,1) calc(3.6deg * var(--percent))
+  );
+  background-blend-mode: overlay;
+
+  width: 3.75em;
+  height: 3.75em;
+  border-radius: 50%;
+}
+
+/* show the percentage (thanks to Ana Tudor for the counter() trick) */
+.pie--value::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  counter-reset: percent var(--percent);
+  content: counter(percent) "%";
+  color: #fff;
+  text-shadow: 0 0 1px #000;
+}
+
+.pie--disc::before {
+  content: '';
+  position: absolute;
+  top: .5em;
+  left: .5em;
+  right: .5em;
+  bottom: .5em;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.pie--disc::after {
+  color: #000;
+  text-shadow: none;
+}
+
+
+/* demo styles
+----------------------------------------------------- */
+
+
+
+.pie {
+  border: .15em solid #fff;
+  box-shadow: 0 .075em .2em .05em rgba(0,0,0,.25);
+  margin: .75rem;
+}
+.pie:nth-child(1) {
+  background-color: #d44;
+}
+.pie:nth-child(2) {
+  background-color: #fc3;
+}
+.pie:nth-child(3) {
+  background-color: #ac0;
+}
+.pie:nth-child(4) {
+  background-color: #0ac;
+}
+.pie:nth-child(5) {
+  background-color: #d6b;
+}
+
+.big {
+  font-size: 200%;
+}
+.med {
+  font-size: 150%;
+}
+.sml {
+  font-size: 100%;
+}
