@@ -967,6 +967,24 @@
 						</ul>
 					</li>		
 					
+					<!-- MENU FINCANCE -->
+					<li <?=access($user_access, array('admin', 'director','manager','monitor','','finance'))?> <?=active($that, array('new_ticket', 'status_ticket', 'master_jobcard', 'trouble_category', 'trouble_sub_category'))?> style="background-image: linear-gradient( 171.8deg,  rgba(5,111,146,1) 13.5%, rgba(6,57,84,1) 78.6% );">
+						<a href="#" class="zoomsmall">
+						<img style="float: left; margin: 0px 10px 0px 0px;" src="<?=base_url()?>seipkon/assets/img/new-ticket.png" height="28" width="28" />
+						<span class="menu-item-parent">
+						<p class="small" style="">
+							<small style="color:white;font-size:14px; margin: 0px 0px 0px 0px; font-weight: bold;">Data Finance</small><br>
+							<small style="color:white;font-size:10px;">Technical & Maintenance  </small>
+						</p>
+						</span>
+						</a>						
+						<ul>
+							<li <?=access($user_access, array('admin', 'director','manager','monitor','logistic','finance'))?> <?=active($that, 'costing_job')?>>
+								<a href="<?=base_url()?>costing_job.assindo" class="zoomsmall"><img style="float: left; margin: 3px 5px 0px -10px;" src="<?=base_url()?>seipkon/assets/img/blackbook.png" height="15" width="15" />Costing Job</a>
+							</li>
+						</ul>
+					</li>		
+					
 					<!-- MENU MASTER REPORTS -->
 					<li <?=access($user_access, array('admin', 'director','manager','monitor','logistic','finance'))?> <?=active($that, array('report_attendance', 'inventory_report', 'report_maintenance', 'report_jobcard'))?> style="background-image: linear-gradient( 171.8deg,  rgba(5,111,146,1) 13.5%, rgba(6,57,84,1) 78.6% );">
 						<a href="#" class="zoomsmall">

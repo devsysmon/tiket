@@ -665,6 +665,47 @@ class Service extends REST_Controller {
 		}
 	}
 	
+	function save_akomodation_post() {
+		// print_r($this->input->post());
+		
+		$id_user = $this->input->post('id_user');
+		$id_detail = $this->input->post('id_detail');
+		$data_save = $this->input->post('data_save');
+		
+		$ticket_id = $this->db->query("SELECT ticket_id FROM master_ticket WHERE id='$id_detail'")->row()->ticket_id;
+		
+		$data['ticket_id'] = $ticket_id;
+		$data['detail'] = $data_save;
+		
+		$this->db->where('ticket_id', $ticket_id);
+		$q = $this->db->get('finance_akomodation');
+		if ($q->num_rows() > 0) {
+			$this->db->where('ticket_id', $ticket_id);
+			$res = $this->db->update('finance_akomodation', $data);
+		} else {
+			$this->db->set('ticket_id', $ticket_id);
+			$res = $this->db->insert('finance_akomodation', $data);
+		}
+		
+		// $saved = json_decode($data_save, true);
+		
+		// if($saved['status']!=='pending-sparepart' || $saved['status']!=='pending-pekerjaan') {
+			// $this->db->set('end_job', date("Y-m-d H:i:s"));
+		// }
+		// $this->db->set('status', $saved['status']);
+		// $this->db->set('action_taken', json_encode($saved));
+		// $this->db->set('remark', $saved['remark']);
+		// $this->db->set('updated', 'true');
+		// $this->db->where('id', $id_detail);
+		// $res = $this->db->update('master_ticket');
+		
+		if($res) {
+			echo "success";
+		} else {
+			echo "failed";
+		}
+	}
+	
 	function save_pending_job_post() {
 		// print_r($this->input->post());
 		
